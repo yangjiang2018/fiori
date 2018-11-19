@@ -1,0 +1,23 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="MockServer.controller.App"
+	displayBlock="true">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<sap.ui.comp.smarttable:SmartTable height="100%" 
+						width="100%" 
+						direction="Column" 
+						fitContainer="true" 
+						tableType="ResponsiveTable"
+						header="Smart Table" 
+						enableAutoBinding="true" 
+						xmlns:sap.ui.comp.smarttable="sap.ui.comp.smarttable" 
+						id="__table0" 
+						entitySet="costcenterSet"
+						initiallyVisibleFields="ZcostId"
+						/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,64 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZTEST_YWD_01_SRV" xml:lang="zh" sap:schema-version="1">
+			<EntityType Name="compony" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Bukrs"/>
+				</Key>
+				<Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="公司代码"/>
+				<Property Name="Kunnr" Type="Edm.String" MaxLength="10" sap:label="客户"/>
+				<Property Name="Zname" Type="Edm.String" MaxLength="10" sap:label="名称"/>
+			</EntityType>
+			<EntityType Name="costcenter" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ZcostId"/>
+				</Key>
+				<Property Name="ZcostId" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="成本中心"/>
+				<Property Name="ZcostText" Type="Edm.String" MaxLength="20" sap:label="成本中心描述"/>
+			</EntityType>
+			<EntityType Name="clbxheader" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Recode"/>
+				</Key>
+				<Property Name="Recode" Type="Edm.String" Nullable="false" MaxLength="16" sap:label="单据编号" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Djrq" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="单据日期" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Fjzs" Type="Edm.Byte" Nullable="false" sap:label="附件张数" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/>
+				<Property Name="Jbr" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="经办人" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Fylx" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="费用类型" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Ccmd" Type="Edm.String" Nullable="false" MaxLength="300" sap:label="出差目的" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Bxrgs" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="报销人公司" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Bxje" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="报销金额" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Ccxg" Type="Edm.String" Nullable="false" MaxLength="300" sap:label="出差效果" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Lrzx" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="利润中心" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Hxje" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="核销金额" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Tssm" Type="Edm.String" Nullable="false" MaxLength="300" sap:label="特殊说明" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Fyssbm" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="费用所属部门" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Zfje" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="支付金额" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityContainer Name="ZTEST_YWD_01_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+				<EntitySet Name="componySet" EntityType="ZTEST_YWD_01_SRV.compony" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="costcenterSet" EntityType="ZTEST_YWD_01_SRV.costcenter" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="clbxheaderSet" EntityType="ZTEST_YWD_01_SRV.clbxheader" sap:pageable="false" sap:content-version="1"/>
+			</EntityContainer>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="http://spring.shhlee.com:8000/sap/opu/odata/sap/ZTEST_YWD_01_SRV/$metadata"/>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="http://spring.shhlee.com:8000/sap/opu/odata/sap/ZTEST_YWD_01_SRV/$metadata"/>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
